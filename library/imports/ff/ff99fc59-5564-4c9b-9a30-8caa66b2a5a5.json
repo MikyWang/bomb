@@ -1,0 +1,14 @@
+{
+  "__type__": "cc.TiledMapAsset",
+  "_name": "map",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "tmxXmlStr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<map version=\"1.0\" orientation=\"orthogonal\" renderorder=\"right-up\" width=\"19\" height=\"19\" tilewidth=\"32\" tileheight=\"32\">\n <tileset firstgid=\"1\" name=\"map\" tilewidth=\"32\" tileheight=\"32\">\n  <image source=\"map.png\" width=\"128\" height=\"64\"/>\n  <tile id=\"1\">\n   <properties>\n    <property name=\"type\" value=\"soil\"/>\n   </properties>\n  </tile>\n  <tile id=\"2\">\n   <properties>\n    <property name=\"type\" value=\"steel\"/>\n   </properties>\n  </tile>\n  <tile id=\"3\">\n   <properties>\n    <property name=\"type\" value=\"door\"/>\n   </properties>\n  </tile>\n  <tile id=\"4\">\n   <properties>\n    <property name=\"type\" value=\"prop1\"/>\n   </properties>\n  </tile>\n  <tile id=\"5\">\n   <properties>\n    <property name=\"type\" value=\"prop2\"/>\n   </properties>\n  </tile>\n  <tile id=\"6\">\n   <properties>\n    <property name=\"type\" value=\"prop3\"/>\n   </properties>\n  </tile>\n  <tile id=\"7\">\n   <properties>\n    <property name=\"type\" value=\"prop4\"/>\n   </properties>\n  </tile>\n </tileset>\n <layer name=\"ground\" width=\"19\" height=\"19\">\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjZGBgYBzFo3gUj+JRPCgxAALUAWo=\n  </data>\n </layer>\n <layer name=\"hide\" width=\"19\" height=\"19\">\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjYBgFrEhsdijNMhAOQQMcA+2AUTAKRsGAAwBvQAAZ\n  </data>\n </layer>\n <layer name=\"main\" width=\"19\" height=\"19\">\n  <data encoding=\"base64\" compression=\"zlib\">\n   eJxjZmBgYKYipgZANosaNCF3MaGxmdDEBoO78AF6uwvdjYMlvIgFo+FFGhgNL9IANctTEAYA29ABtQ==\n  </data>\n </layer>\n <objectgroup name=\"objects\">\n  <object name=\"player\" x=\"45\" y=\"45\"/>\n  <object name=\"enemy\" x=\"46\" y=\"560\"/>\n </objectgroup>\n</map>\n",
+  "tmxFolderPath": "MapRes",
+  "textures": [
+    {
+      "__uuid__": "248f4821-7d07-496d-b06d-ce7a393b3a72"
+    }
+  ],
+  "tsxFiles": []
+}

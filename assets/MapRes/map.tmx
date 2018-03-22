@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="19" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="map" tilewidth="32" tileheight="32">
+  <image source="map.png" width="128" height="64"/>
+  <tile id="1">
+   <properties>
+    <property name="type" value="soil"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="steel"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="door"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="prop1"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="prop2"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="prop3"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="type" value="prop4"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="ground" width="19" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzFo3gUj+JRPCgxAALUAWo=
+  </data>
+ </layer>
+ <layer name="hide" width="19" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFrEhsdijNMhAOQQMcA+2AUTAKRsGAAwBvQAAZ
+  </data>
+ </layer>
+ <layer name="main" width="19" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYKYipgZANosaNCF3MaGxmdDEBoO78AF6uwvdjYMlvIgFo+FFGhgNL9IANctTEAYA29ABtQ==
+  </data>
+ </layer>
+ <objectgroup name="objects">
+  <object name="player" x="45" y="45"/>
+  <object name="enemy" x="46" y="560"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,77 @@
+2018-03-22T10:05:32.017Z - normal: Load ~/.CocosCreator/settings.json
+2018-03-22T10:05:32.021Z - normal: checking language setting...
+2018-03-22T10:05:32.021Z - normal: Language: zh
+2018-03-22T10:05:32.923Z - success: protocol editor-framework registered
+2018-03-22T10:05:32.923Z - success: protocol app registered
+2018-03-22T10:05:32.923Z - success: protocol theme registered
+2018-03-22T10:05:32.923Z - success: protocol packages registered
+2018-03-22T10:05:32.923Z - success: protocol unpack registerred
+2018-03-22T10:05:32.923Z - success: protocol disable-commonjs registerred
+2018-03-22T10:05:33.554Z - normal: connected!
+2018-03-22T10:05:33.556Z - normal: Check project /Users/wangqiyuan/Documents/git/bomb
+2018-03-22T10:05:33.557Z - normal: Initializing Cocos2d
+2018-03-22T10:05:33.799Z - normal: Initializing Asset Database
+2018-03-22T10:05:33.835Z - success: protocol uuid registerred
+2018-03-22T10:05:33.835Z - success: protocol db registerred
+2018-03-22T10:05:33.835Z - success: protocol thumbnail registerred
+2018-03-22T10:05:33.836Z - normal: Loading editor/builtin packages
+2018-03-22T10:05:33.855Z - success: anysdk loaded
+2018-03-22T10:05:33.975Z - success: assets loaded
+2018-03-22T10:05:33.980Z - success: builder loaded
+2018-03-22T10:05:33.982Z - success: cocos-analytics loaded
+2018-03-22T10:05:33.986Z - success: console loaded
+2018-03-22T10:05:34.022Z - success: fb-instant-games loaded
+2018-03-22T10:05:34.026Z - success: hierarchy loaded
+2018-03-22T10:05:34.031Z - success: inspector loaded
+2018-03-22T10:05:34.033Z - success: keystore loaded
+2018-03-22T10:05:34.042Z - success: node-library loaded
+2018-03-22T10:05:34.044Z - success: package-asset loaded
+2018-03-22T10:05:34.046Z - success: preferences loaded
+2018-03-22T10:05:34.049Z - success: project-exporter loaded
+2018-03-22T10:05:34.066Z - success: project-importer loaded
+2018-03-22T10:05:34.069Z - success: project-settings loaded
+2018-03-22T10:05:34.073Z - success: ui-kit loaded
+2018-03-22T10:05:34.078Z - success: ui-grid loaded
+2018-03-22T10:05:34.082Z - success: scene loaded
+2018-03-22T10:05:34.084Z - success: sprite-editor loaded
+2018-03-22T10:05:34.088Z - success: store loaded
+2018-03-22T10:05:34.094Z - success: timeline loaded
+2018-03-22T10:05:34.094Z - normal: Loading builtin packages
+2018-03-22T10:05:34.099Z - success: asset-db-debugger loaded
+2018-03-22T10:05:34.100Z - success: color-picker loaded
+2018-03-22T10:05:34.104Z - success: package-manager loaded
+2018-03-22T10:05:34.109Z - success: sdkbox loaded
+2018-03-22T10:05:34.116Z - success: tester loaded
+2018-03-22T10:05:34.120Z - success: ui-kit-preview-extra loaded
+2018-03-22T10:05:34.125Z - success: ui-kit-preview loaded
+2018-03-22T10:05:34.128Z - success: ui-tree loaded
+2018-03-22T10:05:35.147Z - normal: Initializing project /Users/wangqiyuan/Documents/git/bomb
+2018-03-22T10:05:35.149Z - normal: Loading packages
+2018-03-22T10:05:35.154Z - normal: Watching packages
+2018-03-22T10:05:35.166Z - normal: Run Application
+2018-03-22T10:05:35.724Z - success: preview server running at http://localhost:7457
+2018-03-22T10:05:41.267Z - normal: 1.9.0
+2018-03-22T10:05:42.148Z - warn: Please specifiy a default value for "map" property at its declaration: 😂
+    // Before:
+    @property(...)
+    value;
+
+    // After:
+    @property(...)
+    value = 0;
+2018-03-22T10:05:42.151Z - warn: Please specifiy a default value for "hideLayer" property at its declaration: 😂
+    // Before:
+    @property(...)
+    value;
+
+    // After:
+    @property(...)
+    value = 0;
+2018-03-22T10:05:42.154Z - warn: Please specifiy a default value for "mainLayer" property at its declaration: 😂
+    // Before:
+    @property(...)
+    value;
+
+    // After:
+    @property(...)
+    value = 0;

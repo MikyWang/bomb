@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "monster_dead1",
+    "texture": "52045b18-7baf-4898-b419-368754d39fff",
+    "atlas": "10bb2009-b09d-4bb5-9934-8d884852d3c2",
+    "rect": [
+      16,
+      32,
+      16,
+      16
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      16,
+      16
+    ]
+  }
+}

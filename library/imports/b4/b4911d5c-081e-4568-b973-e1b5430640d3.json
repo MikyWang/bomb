@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "man_dead5",
+    "texture": "31156b02-fb6d-4d35-be96-a279e02d4db1",
+    "atlas": "0f8acab8-d5e3-4b63-92b2-0fd1932717dc",
+    "rect": [
+      16,
+      64,
+      16,
+      15
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      16,
+      15
+    ]
+  }
+}

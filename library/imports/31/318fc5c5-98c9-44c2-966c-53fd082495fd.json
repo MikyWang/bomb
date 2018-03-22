@@ -1,0 +1,85 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "exploded",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 3,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "b51728d5-911f-42a7-b0d2-0702aaa8f639"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "f0a44567-3c2d-4dc2-b51f-6f1710db5b6e"
+            }
+          },
+          {
+            "frame": 0.9666666666666667,
+            "value": {
+              "__uuid__": "103fa3ad-ee69-478f-a971-66b2765f3f13"
+            }
+          },
+          {
+            "frame": 1.4833333333333334,
+            "value": {
+              "__uuid__": "b51728d5-911f-42a7-b0d2-0702aaa8f639"
+            }
+          },
+          {
+            "frame": 1.8166666666666667,
+            "value": {
+              "__uuid__": "f0a44567-3c2d-4dc2-b51f-6f1710db5b6e"
+            }
+          },
+          {
+            "frame": 2.2333333333333334,
+            "value": {
+              "__uuid__": "103fa3ad-ee69-478f-a971-66b2765f3f13"
+            }
+          },
+          {
+            "frame": 2.5,
+            "value": {
+              "__uuid__": "bb4d915b-d1bd-496c-82c8-1310e452f243"
+            }
+          },
+          {
+            "frame": 2.6666666666666665,
+            "value": {
+              "__uuid__": "e4469d35-a2da-4258-96cb-e8b4681dbf0b"
+            }
+          },
+          {
+            "frame": 2.816666666666667,
+            "value": {
+              "__uuid__": "9105f6c6-f73a-4fcf-b975-a0ca5c7f6335"
+            }
+          },
+          {
+            "frame": 2.9833333333333334,
+            "value": {
+              "__uuid__": "08e7e862-6a8e-455c-8199-1cede28eead2"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 3,
+      "func": "exploded",
+      "params": []
+    }
+  ]
+}
