@@ -75,3 +75,8 @@
     // After:
     @property(...)
     value = 0;
+2018-03-23T01:11:49.688Z - success: API data generated and copied to /Users/wangqiyuan/Documents/git/bomb/creator.d.ts
+2018-03-23T01:11:53.251Z - success: VS Code extension installed to /Users/wangqiyuan/.vscode/extensions
+2018-03-23T01:11:57.581Z - success: TypeScript Configuration file has been copied to /Users/wangqiyuan/Documents/git/bomb/tsconfig.json
+2018-03-23T01:12:00.846Z - success: Chrome debug setting has been updated to .vscode/launch.json, please install Debugger for Chrome VS Code extension to debug your project.
+2018-03-23T01:12:04.749Z - success: Compiling task has been added to .vscode/tasks.json, please run "compile" task in VS Code to trigger compile in Cocos Creator.
