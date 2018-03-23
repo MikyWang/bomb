@@ -10,7 +10,7 @@ var Bomb = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Bomb.prototype.exploded = function () {
-        this.node.parent.emit('exploded');
+        this.node.destroy();
     };
     Bomb = __decorate([
         ccclass

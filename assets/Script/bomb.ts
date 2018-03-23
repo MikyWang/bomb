@@ -4,7 +4,7 @@ const { ccclass, property } = cc._decorator;
 export default class Bomb extends cc.Component {
 
     exploded() {
-        this.node.parent.emit('exploded');
+        this.node.destroy();
     }
 
 }

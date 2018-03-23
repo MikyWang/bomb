@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="19" height="19" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="map" tilewidth="32" tileheight="32">
+<map version="1.0" tiledversion="1.1.3" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" name="map" tilewidth="32" tileheight="32" tilecount="8" columns="4">
   <image source="map.png" width="128" height="64"/>
   <tile id="1">
    <properties>
@@ -19,42 +19,38 @@
   </tile>
   <tile id="4">
    <properties>
-    <property name="type" value="prop1"/>
+    <property name="type" value="power"/>
    </properties>
   </tile>
   <tile id="5">
    <properties>
-    <property name="type" value="prop2"/>
+    <property name="type" value="water"/>
    </properties>
   </tile>
   <tile id="6">
    <properties>
-    <property name="type" value="prop3"/>
+    <property name="type" value="speed"/>
    </properties>
   </tile>
   <tile id="7">
    <properties>
-    <property name="type" value="prop4"/>
+    <property name="type" value="health"/>
    </properties>
   </tile>
  </tileset>
- <layer name="ground" width="19" height="19">
+ <layer name="ground" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYBzFo3gUj+JRPCgxAALUAWo=
+   eJztw0ENAAAMA6Grf9MzsSckrJqqqm8PCzUCWQ==
   </data>
  </layer>
- <layer name="hide" width="19" height="19">
+ <layer name="hide" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFrEhsdijNMhAOQQMcA+2AUTAKRsGAAwBvQAAZ
+   eJxjYBgFo2DgACsan4OA/HADbAPtABoDQvGLzh9uYLilX/T0ykJAPTutHDJIwHD33yigDAAAZk8ASw==
   </data>
  </layer>
- <layer name="main" width="19" height="19">
+ <layer name="block" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjZmBgYKYipgZANosaNCF3MaGxmdDEBoO78AF6uwvdjYMlvIgFo+FFGhgNL9IANctTEAYA29ABtQ==
+   eJztlVEKACEIRMXuf+d+ZRjXDLWfHZBA28aHxS4RWY9iWtZ3akXfSXXzKsmjL0ovgp0hpBbxsn67eVmfp7VoTxWvOvsreLF3rLEZd/NmvkdfJq/fU7Zq3uzcbR59Wa/e+2SslfONVu8eY93m0Tcj5Pu6B0z//2iW90VsqmsC+A==
   </data>
  </layer>
- <objectgroup name="objects">
-  <object name="player" x="45" y="45"/>
-  <object name="enemy" x="46" y="560"/>
- </objectgroup>
 </map>

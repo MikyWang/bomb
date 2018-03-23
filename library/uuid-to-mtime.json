@@ -319,24 +319,14 @@
     "meta": 1521704338122,
     "relativePath": "MapRes"
   },
-  "ff99fc59-5564-4c9b-9a30-8caa66b2a5a5": {
-    "asset": 1463056092000,
-    "meta": 1521706094257,
-    "relativePath": "MapRes/map.tmx"
-  },
-  "248f4821-7d07-496d-b06d-ce7a393b3a72": {
-    "asset": 1463047024000,
-    "meta": 1521704364116,
-    "relativePath": "MapRes/map.png"
-  },
   "029afc86-6626-40c5-b692-a4236c7508bd": {
     "asset": 1521713110000,
     "meta": 1521705891239,
     "relativePath": "Scene"
   },
   "d2fe65ca-4e44-4e6d-b435-52995be259c9": {
-    "asset": 1521709913102,
-    "meta": 1521709913108,
+    "asset": 1521796791383,
+    "meta": 1521796791390,
     "relativePath": "Scene/game.fire"
   },
   "1e1b6ecd-3195-48a2-964e-5b4d8ad7e32a": {
@@ -345,23 +335,68 @@
     "relativePath": "Script"
   },
   "69537cda-6ec5-41be-a6c0-1f622440155c": {
-    "asset": 1521708881959,
-    "meta": 1521708881971,
-    "relativePath": "Scene/bomb.prefab"
+    "asset": 1521795723167,
+    "meta": 1521795723174,
+    "relativePath": "Prefab/bomb.prefab"
   },
   "318fc5c5-98c9-44c2-966c-53fd082495fd": {
     "asset": 1521708672941,
     "meta": 1521708672956,
-    "relativePath": "Scene/exploded.anim"
+    "relativePath": "Animations/exploded.anim"
+  },
+  "57fbea21-b4e2-431f-8bba-ec05816bd74d": {
+    "asset": 1521770931000,
+    "meta": 1521770925694,
+    "relativePath": "Animations"
+  },
+  "7d5d6873-6082-4e1b-b0af-3714d817292d": {
+    "asset": 1521772740854,
+    "meta": 1521772740869,
+    "relativePath": "Animations/right.anim"
+  },
+  "0d46e7bf-87d7-4375-9b06-71110c9016fe": {
+    "asset": 1521772837159,
+    "meta": 1521772837166,
+    "relativePath": "Animations/left.anim"
+  },
+  "e9f0c390-4663-4606-83a7-662e4e2eef1e": {
+    "asset": 1521772941320,
+    "meta": 1521772941340,
+    "relativePath": "Animations/up.anim"
+  },
+  "3e0d78a4-e9b4-4d9d-828d-d49d80aebb3d": {
+    "asset": 1521777127595,
+    "meta": 1521777127601,
+    "relativePath": "Animations/down.anim"
+  },
+  "25a0f20b-bb26-4834-b4bd-1d194245576c": {
+    "asset": 1521779177000,
+    "meta": 1521779175095,
+    "relativePath": "Prefab"
   },
   "d054baba-9450-4dfa-86b8-176c46c5387f": {
-    "asset": 1521708810000,
-    "meta": 1521708824571,
+    "asset": 1521780429000,
+    "meta": 1521780442506,
     "relativePath": "Script/bomb.ts"
   },
   "a8c4e2e8-8256-4b1f-b1c5-055ecb19b8e0": {
-    "asset": 1521708804000,
-    "meta": 1521708824572,
+    "asset": 1521792087000,
+    "meta": 1521792090473,
     "relativePath": "Script/game.ts"
+  },
+  "248f4821-7d07-496d-b06d-ce7a393b3a72": {
+    "asset": 1463047024000,
+    "meta": 1521795062691,
+    "relativePath": "MapRes/map.png"
+  },
+  "ff99fc59-5564-4c9b-9a30-8caa66b2a5a5": {
+    "asset": 1521796281528,
+    "meta": 1521796283636,
+    "relativePath": "MapRes/map.tmx"
+  },
+  "455c6260-2ac2-42ff-878c-2e260ee853c2": {
+    "asset": 1521796726000,
+    "meta": 1521796727499,
+    "relativePath": "Script/player.ts"
   }
 }

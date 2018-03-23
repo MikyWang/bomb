@@ -48,7 +48,7 @@
                 "width": 707.984375
               },
               {
-                "active": 0,
+                "active": 1,
                 "children": [
                   "console",
                   "timeline"
@@ -96,6 +96,12 @@
       "y": 177,
       "width": 400,
       "height": 422
+    },
+    "sprite-editor": {
+      "x": 365,
+      "y": 127,
+      "width": 500,
+      "height": 522
     }
   }
 }
