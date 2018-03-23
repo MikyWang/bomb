@@ -67,6 +67,9 @@
       },
       {
         "__id__": 16
+      },
+      {
+        "__id__": 17
       }
     ],
     "_prefab": null,
@@ -451,8 +454,7 @@
     "bombPrefab": {
       "__uuid__": "69537cda-6ec5-41be-a6c0-1f622440155c"
     },
-    "speed": 32,
-    "duration": 0.3
+    "duration": 0.1
   },
   {
     "__type__": "cc.Animation",
@@ -527,5 +529,14 @@
     "player": {
       "__id__": 10
     }
+  },
+  {
+    "__type__": "f45b9B3pFdKr6JtcDA0Twsd",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true
   }
 ]

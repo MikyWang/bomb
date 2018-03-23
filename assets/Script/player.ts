@@ -1,4 +1,5 @@
 import Game from "./game";
+import ObjectHelper from "./objectHelper";
 
 const { ccclass, property } = cc._decorator;
 
@@ -6,7 +7,8 @@ enum MoveType {
     Left,
     Right,
     Up,
-    Down
+    Down,
+    None
 }
 
 @ccclass
@@ -14,42 +16,48 @@ export default class Player extends cc.Component {
 
     @property(cc.Prefab)
     bombPrefab: cc.Prefab = null;
-    @property(cc.Integer)
-    speed: number = 0;
     @property(cc.Float)
     duration: number = 0;
 
-    game: Game;
+    game: Game = null;
+    playerTile: cc.Vec2 = null;
+    moveState: MoveType = MoveType.None;
 
     onLoad() {
         this.node.setLocalZOrder(99);
+
     }
 
     start() {
+        this.playerTile = this.game.getTilePos(this.node.getPosition());
+        this.playerTile.y -= 1;
         this.addEventListener();
     }
 
-    canMove(position: cc.Vec2): boolean {
+    canMove(tile: cc.Vec2): boolean {
+        let mapSize = this.game.map.getMapSize();
+        if (tile.x < 0 || tile.x >= mapSize.width) return false;
+        if (tile.y < 0 || tile.y >= mapSize.height) return false;
 
-        let tilePos = this.game.getTilePos(position);
-        let tile = this.game.mainLayer.getTileAt(cc.p(tilePos.x, tilePos.y - 1));
-        return tile ? false : true;
+        let newTileId = this.game.mainLayer.getTileAt(tile);
+        return newTileId ? false : true;
     }
 
     move(moveType: MoveType) {
-        let xPos = 0, yPos = 0;
+        if (this.moveState != MoveType.None) return;
+        let newTile = ObjectHelper.shallowCopy(this.playerTile) as cc.Vec2;
         switch (moveType) {
             case MoveType.Left:
-                xPos -= this.speed;
+                newTile.x -= 1;
                 break;
             case MoveType.Right:
-                xPos += this.speed;
+                newTile.x += 1;
                 break;
             case MoveType.Up:
-                yPos += this.speed;
+                newTile.y -= 1;
                 break;
             case MoveType.Down:
-                yPos -= this.speed;
+                newTile.y += 1;
                 break;
         }
         let aniName = MoveType[moveType].toLowerCase();
@@ -57,13 +65,17 @@ export default class Player extends cc.Component {
         if (!animation.getAnimationState(aniName).isPlaying) {
             animation.play(aniName);
         }
-        if (!this.canMove(cc.p(this.node.x + xPos, this.node.y + yPos))) return;
-        this.node.runAction(this.moveAction(xPos, yPos));
+        if (!this.canMove(newTile)) return;
+        this.moveState = moveType;
+        this.playerTile = ObjectHelper.shallowCopy(newTile) as cc.Vec2;
+        let position = this.game.mainLayer.getPositionAt(newTile);
+        this.node.runAction(this.moveAction(position));
     }
 
-    moveAction(xPos, yPos): cc.Action {
-        let move = cc.moveTo(this.duration, cc.p(this.node.x + xPos, this.node.y + yPos));
+    moveAction(position: cc.Vec2): cc.Action {
+        let move = cc.moveTo(this.duration, cc.p(position.x, position.y));
         let callback = cc.callFunc(() => {
+            this.moveState = MoveType.None;
         })
         return cc.sequence(move, callback);
     }
