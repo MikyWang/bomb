@@ -34,10 +34,7 @@ export default class Player extends cc.Component {
 
     update(dt: number) {
         if (ObjectHelper.currentGameInstance().isExistMonster(this.playerTile)) {
-            if (!this.animation.getAnimationState(this.playerDeadedAniName).isPlaying) {
-                this.isAlive = false;
-                this.animation.play(this.playerDeadedAniName);
-            }
+            this.killed();
         }
     }
 
@@ -45,7 +42,15 @@ export default class Player extends cc.Component {
         this.node.destroy();
     }
 
+    killed() {
+        if (!this.animation.getAnimationState(this.playerDeadedAniName).isPlaying) {
+            this.isAlive = false;
+            this.animation.play(this.playerDeadedAniName);
+        }
+    }
+
     move(moveType: MoveType) {
+        if (!this.isAlive) return;
         if (this.moveState != MoveType.None || this.currentAction) {
             this.node.stopAction(this.currentAction);
         }
@@ -69,7 +74,7 @@ export default class Player extends cc.Component {
         if (!this.animation.getAnimationState(aniName).isPlaying) {
             this.animation.play(aniName);
         }
-        if (!ObjectHelper.currentGameInstance().canMove(newTile) || !this.isAlive) return;
+        if (!ObjectHelper.currentGameInstance().canMove(newTile)) return;
         this.moveState = moveType;
         this.playerTile = ObjectHelper.shallowCopy(cc.Vec2, newTile) as cc.Vec2;
         this.movePosition = ObjectHelper.currentGameInstance().mainLayer.getPositionAt(newTile);
@@ -88,6 +93,10 @@ export default class Player extends cc.Component {
         let bomb = cc.instantiate(this.bombPrefab);
         bomb.setPosition(this.node.getPosition());
         this.node.parent.addChild(bomb, this.node.getLocalZOrder() - 1);
+    }
+
+    getPlayerTile(): cc.Vec2 {
+        return ObjectHelper.shallowCopy(cc.Vec2, this.playerTile);
     }
 
     addEventListener() {

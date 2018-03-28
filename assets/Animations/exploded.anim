@@ -74,7 +74,28 @@
         ]
       }
     },
-    "props": {}
+    "props": {
+      "height": [
+        {
+          "frame": 2.5,
+          "value": 32
+        },
+        {
+          "frame": 3,
+          "value": 96
+        }
+      ],
+      "anchorY": [
+        {
+          "frame": 2.5,
+          "value": 0
+        },
+        {
+          "frame": 3,
+          "value": 0.5
+        }
+      ]
+    }
   },
   "events": [
     {

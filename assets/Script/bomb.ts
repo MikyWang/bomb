@@ -1,6 +1,7 @@
 import ObjectHelper, { TileType } from "./objectHelper";
 import Game from "./game";
 import Monster from "./monster";
+import Player from "./player";
 
 const { ccclass, property } = cc._decorator;
 
@@ -15,14 +16,18 @@ export default class Bomb extends cc.Component {
     exploded() {
         let game = ObjectHelper.currentGameInstance();
         let tilePosition = game.getTilePos(this.node.position);
-        this.tryRemoveTile(cc.p(tilePosition.x - 1, tilePosition.y));
-        this.tryRemoveTile(cc.p(tilePosition.x + 1, tilePosition.y));
-        this.tryRemoveTile(cc.p(tilePosition.x, tilePosition.y - 1));
-        this.tryRemoveTile(cc.p(tilePosition.x, tilePosition.y + 1));
-        this.tryKillMonster(cc.p(tilePosition.x - 1, tilePosition.y));
-        this.tryKillMonster(cc.p(tilePosition.x + 1, tilePosition.y));
-        this.tryKillMonster(cc.p(tilePosition.x, tilePosition.y - 1));
-        this.tryKillMonster(cc.p(tilePosition.x, tilePosition.y + 1));
+
+        let linkTiles: cc.Vec2[] = [];
+        linkTiles.push(cc.p(tilePosition.x - 1, tilePosition.y));
+        linkTiles.push(cc.p(tilePosition.x + 1, tilePosition.y));
+        linkTiles.push(cc.p(tilePosition.x, tilePosition.y - 1));
+        linkTiles.push(cc.p(tilePosition.x, tilePosition.y + 1));
+
+        linkTiles.forEach(linkTile => {
+            this.tryRemoveTile(linkTile);
+            this.tryKillMonster(linkTile);
+            this.tryKillPlayer(linkTile);
+        });
         this.node.destroy();
     }
 
@@ -40,6 +45,13 @@ export default class Bomb extends cc.Component {
                 game.destroyMonster(monster);
             }
         })
+    }
+
+    tryKillPlayer(tilePosition) {
+        let player = ObjectHelper.currentGameInstance().player.getComponent(Player);
+        if (player.getPlayerTile().equals(tilePosition)) {
+            player.killed();
+        }
     }
 
     tryRemoveTile(position: cc.Vec2) {
