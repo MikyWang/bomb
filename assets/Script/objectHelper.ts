@@ -57,4 +57,3 @@ export enum TileType {
     Speed,
     Health
 }
-

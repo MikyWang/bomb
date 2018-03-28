@@ -14,41 +14,40 @@ export default class Player extends cc.Component {
     @property(cc.Float)
     duration: number = 0;
 
-    playerTile: cc.Vec2 = null;
-    moveState: MoveType = MoveType.None;
-    movePosition: cc.Vec2 = null;
+    private playerTile: cc.Vec2 = null;
+    private moveState: MoveType = MoveType.None;
+    private movePosition: cc.Vec2 = null;
+    private currentAction: cc.Action = null;
+    private animation: cc.Animation = null;
+    private playerDeadedAniName = 'playerDead';
+    private isAlive: boolean = true;
 
     onLoad() {
         this.node.setLocalZOrder(99);
     }
 
     start() {
+        this.animation = this.node.getComponent(cc.Animation);
         this.playerTile = ObjectHelper.currentGameInstance().getTilePos(this.node.getPosition());
         this.addEventListener();
     }
 
-    canMove(tile: cc.Vec2): boolean {
-        let game = ObjectHelper.currentGameInstance();
-        let mapSize = game.map.getMapSize();
-        if (tile.x < 0 || tile.x >= mapSize.width) return false;
-        if (tile.y < 0 || tile.y >= mapSize.height) return false;
-
-        let newTile = ObjectHelper.currentGameInstance().mainLayer.getTileAt(tile);
-        let success = newTile ? false : true;
-        if (!success) return success;
-        let bombList = game.getBombList();
-        bombList.forEach(bomb => {
-            let bombTile = game.getTilePos((bomb as Bomb).node.position);
-            if (bombTile.equals(tile)) {
-                success = false;
+    update(dt: number) {
+        if (ObjectHelper.currentGameInstance().isExistMonster(this.playerTile)) {
+            if (!this.animation.getAnimationState(this.playerDeadedAniName).isPlaying) {
+                this.isAlive = false;
+                this.animation.play(this.playerDeadedAniName);
             }
-        });
-        return success;
+        }
+    }
+
+    onDeaded() {
+        this.node.destroy();
     }
 
     move(moveType: MoveType) {
-        if (this.moveState != MoveType.None) {
-            this.node.stopAllActions();
+        if (this.moveState != MoveType.None || this.currentAction) {
+            this.node.stopAction(this.currentAction);
         }
         let newTile = ObjectHelper.shallowCopy(cc.Vec2, this.playerTile) as cc.Vec2;
         switch (moveType) {
@@ -66,15 +65,15 @@ export default class Player extends cc.Component {
                 break;
         }
         let aniName = ObjectHelper.getEnumName(MoveType, moveType);
-        let animation = this.getComponent(cc.Animation);
-        if (!animation.getAnimationState(aniName).isPlaying) {
-            animation.play(aniName);
+        this.animation = this.getComponent(cc.Animation);
+        if (!this.animation.getAnimationState(aniName).isPlaying) {
+            this.animation.play(aniName);
         }
-        if (!this.canMove(newTile)) return;
+        if (!ObjectHelper.currentGameInstance().canMove(newTile) || !this.isAlive) return;
         this.moveState = moveType;
         this.playerTile = ObjectHelper.shallowCopy(cc.Vec2, newTile) as cc.Vec2;
         this.movePosition = ObjectHelper.currentGameInstance().mainLayer.getPositionAt(newTile);
-        this.node.runAction(this.moveAction());
+        this.currentAction = this.node.runAction(this.moveAction());
     }
 
     moveAction(): cc.Action {

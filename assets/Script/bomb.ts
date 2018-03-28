@@ -1,5 +1,6 @@
 import ObjectHelper, { TileType } from "./objectHelper";
 import Game from "./game";
+import Monster from "./monster";
 
 const { ccclass, property } = cc._decorator;
 
@@ -18,12 +19,27 @@ export default class Bomb extends cc.Component {
         this.tryRemoveTile(cc.p(tilePosition.x + 1, tilePosition.y));
         this.tryRemoveTile(cc.p(tilePosition.x, tilePosition.y - 1));
         this.tryRemoveTile(cc.p(tilePosition.x, tilePosition.y + 1));
+        this.tryKillMonster(cc.p(tilePosition.x - 1, tilePosition.y));
+        this.tryKillMonster(cc.p(tilePosition.x + 1, tilePosition.y));
+        this.tryKillMonster(cc.p(tilePosition.x, tilePosition.y - 1));
+        this.tryKillMonster(cc.p(tilePosition.x, tilePosition.y + 1));
         this.node.destroy();
     }
 
     onDestroy() {
         let game = ObjectHelper.currentGameInstance();
         game.destroyBomb(this);
+    }
+
+    tryKillMonster(tilePosition) {
+        let game = ObjectHelper.currentGameInstance();
+        let monsterList = game.getMonsterList() as Array<Monster>;
+        monsterList.forEach(monster => {
+            let monsterTile = game.getTilePos(monster.node.position);
+            if (monsterTile.equals(tilePosition)) {
+                game.destroyMonster(monster);
+            }
+        })
     }
 
     tryRemoveTile(position: cc.Vec2) {
